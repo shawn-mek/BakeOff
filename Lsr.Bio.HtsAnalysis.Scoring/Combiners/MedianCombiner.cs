@@ -6,14 +6,14 @@ namespace Lsr.Bio.HtsAnalysis.Scoring.Combiners {
 	/// <summary>
 	/// Combiner that calculates the median of double input values
 	/// </summary>
-    public class MedianCombiner: Combiner<double, double> {
+	public class MedianCombiner: Combiner<double, double> {
 		#region constructors
 		/// <summary>
 		/// Default constructor that sets the value of the OutputDescriptor property
 		/// </summary>
-        public MedianCombiner() {
-            this.OutputDescriptor = "Median";
-        } //end constructor
+		public MedianCombiner() {
+			this.OutputDescriptor = "Median";
+		} //end constructor
 		#endregion constructors
 
 		#region methods
@@ -23,11 +23,11 @@ namespace Lsr.Bio.HtsAnalysis.Scoring.Combiners {
 		/// <param name="wellValues">A list of input double values, as from a single well across multiple 
 		/// replicates</param>
 		/// <returns>The median of the input double values</returns>
-        protected override double Combine(IEnumerable<double> wellValues) {
-            double[] wellValuesArray = wellValues.ToArray();
-            double result = AnalysisUtilities.GetMedian(wellValuesArray);
-            return result;
-        } //end Combine
+		protected override double Combine(IEnumerable<double> wellValues) {
+			double[] wellValuesArray = wellValues.ToArray();
+			double result = AnalysisUtilities.GetMedian(wellValuesArray);
+			return result;
+		} //end Combine
 		#endregion methods
 	} //end MedianCombiner
 }

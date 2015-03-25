@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using NoiseMaker;
 
 namespace Lsr.Bio.Benchmark.ScreenSimulator.HitSet {
     /// <summary>

@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NoiseMaker">
+      <HintPath>..\Lib\NoiseMaker.exe</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,10 +58,6 @@
     <Compile Include="ScoringSet\ScoringSetTextParser.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SharedCode\NoiseMaker\Source\Code\NoiseMaker\Source\NoiseMaker.csproj">
-      <Project>{1C8A19FD-F135-4EA8-AD8A-19B0CDC8D653}</Project>
-      <Name>NoiseMaker</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Lsr.Bio.Benchmark.SimulationGenerator\Lsr.Bio.Benchmark.ScreenSimulator.csproj">
       <Project>{4F29C16E-4149-42F5-87A3-2C0FD60F8C5C}</Project>
       <Name>Lsr.Bio.Benchmark.ScreenSimulator</Name>
@@ -74,6 +73,10 @@
     <ProjectReference Include="..\Lsr.Bio.HtsAnalysis.Core\Lsr.Bio.HtsAnalysis.Core.csproj">
       <Project>{3559AC67-E212-48D8-ACF7-1E30887FF428}</Project>
       <Name>Lsr.Bio.HtsAnalysis.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lsr.Bio.HtsAnalysis.Workflows\Lsr.Bio.HtsAnalysis.Workflows.csproj">
+      <Project>{c1826d9d-ae63-4246-9af9-fc92cdeedb55}</Project>
+      <Name>Lsr.Bio.HtsAnalysis.Workflows</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

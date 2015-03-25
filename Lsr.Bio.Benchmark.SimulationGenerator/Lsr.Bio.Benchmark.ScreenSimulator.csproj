@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NoiseMaker">
+      <HintPath>..\Lib\NoiseMaker.exe</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -58,10 +61,6 @@
     <Compile Include="SimulationInputs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SharedCode\NoiseMaker\Source\Code\NoiseMaker\Source\NoiseMaker.csproj">
-      <Project>{1C8A19FD-F135-4EA8-AD8A-19B0CDC8D653}</Project>
-      <Name>NoiseMaker</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Lsr.Bio.Benchmark.Utilities\Lsr.Bio.Benchmark.Utilities.csproj">
       <Project>{B011B4DD-ADA2-414E-8D56-331B71811D2D}</Project>
       <Name>Lsr.Bio.Benchmark.Utilities</Name>

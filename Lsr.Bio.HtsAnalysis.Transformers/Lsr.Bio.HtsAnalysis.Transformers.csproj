@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Lsr.Bio.Core">
-      <HintPath>..\..\Lib\SharedSource\Lsr.Bio.Core.dll</HintPath>
+      <HintPath>..\Lib\Lsr.Bio.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
