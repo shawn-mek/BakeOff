@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6F31B0D9-035F-449E-BCF4-6792F3898E5A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lsr.Bio.HtsAnalysis.Scoring</RootNamespace>
+    <AssemblyName>Lsr.Bio.HtsAnalysis.Scoring</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Lsr.Bio.Core">
+      <HintPath>..\..\Lib\SharedSource\Lsr.Bio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Combiners\AndCombiner.cs" />
+    <Compile Include="Combiners\Combiner.cs" />
+    <Compile Include="Combiners\ICombiner.cs" />
+    <Compile Include="Combiners\MedianCombiner.cs" />
+    <Compile Include="Combiners\OrCombiner.cs" />
+    <Compile Include="IDescriptor.cs" />
+    <Compile Include="ScoringExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Transformers\BscoreTransformer.cs" />
+    <Compile Include="Transformers\HitIdTransformer.cs" />
+    <Compile Include="Transformers\ITransformer.cs" />
+    <Compile Include="Transformers\Log2Transformer.cs" />
+    <Compile Include="Transformers\MedianDivider.cs" />
+    <Compile Include="Transformers\PlateMedianDivider.cs" />
+    <Compile Include="Transformers\SampleMedianDivider.cs" />
+    <Compile Include="Transformers\Transformer.cs" />
+    <Compile Include="Transformers\ExtensionsToITransformer.cs" />
+    <Compile Include="Transformers\ZScore.cs" />
+    <Compile Include="Transformers\ZScorePerExperiment.cs" />
+    <Compile Include="Transformers\ZScorePerPlate.cs" />
+    <Compile Include="Workflows\BakeoffWorkflow.cs" />
+    <Compile Include="Workflows\IWorkflow.cs" />
+    <Compile Include="Workflows\SampleHitIdWorkflow.cs" />
+    <Compile Include="Workflows\ScoringWorkflowInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lsr.Bio.HtsAnalysis.Core\Lsr.Bio.HtsAnalysis.Core.csproj">
+      <Project>{3559AC67-E212-48D8-ACF7-1E30887FF428}</Project>
+      <Name>Lsr.Bio.HtsAnalysis.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lsr.Bio.HtsAnalysis.Ranalysis\Lsr.Bio.HtsAnalysis.RAnalysis.csproj">
+      <Project>{97EC09AC-2B12-44B0-AC84-E497394A8656}</Project>
+      <Name>Lsr.Bio.HtsAnalysis.RAnalysis</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

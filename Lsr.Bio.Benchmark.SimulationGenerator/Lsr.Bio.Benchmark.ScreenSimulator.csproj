@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F29C16E-4149-42F5-87A3-2C0FD60F8C5C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lsr.Bio.Benchmark.ScreenSimulator</RootNamespace>
+    <AssemblyName>Lsr.Bio.Benchmark.ScreenSimulator</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SimulationManager.cs" />
+    <Compile Include="HitSet\HitSetInfo.cs" />
+    <Compile Include="HitSet\HitSetTextParser.cs" />
+    <Compile Include="HitSet\IHitSetTextParser.cs" />
+    <Compile Include="NoiseSet\INoiseSetTextParser.cs" />
+    <Compile Include="NoiseSet\NoiseSetInfo.cs" />
+    <Compile Include="NoiseSet\NoiseSetTextParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Screen\IScreenTextParser.cs" />
+    <Compile Include="Screen\ScreenInfo.cs" />
+    <Compile Include="Screen\ScreenTextParser.cs" />
+    <Compile Include="SimulationInputs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SharedCode\NoiseMaker\Source\Code\NoiseMaker\Source\NoiseMaker.csproj">
+      <Project>{1C8A19FD-F135-4EA8-AD8A-19B0CDC8D653}</Project>
+      <Name>NoiseMaker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lsr.Bio.Benchmark.Utilities\Lsr.Bio.Benchmark.Utilities.csproj">
+      <Project>{B011B4DD-ADA2-414E-8D56-331B71811D2D}</Project>
+      <Name>Lsr.Bio.Benchmark.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
